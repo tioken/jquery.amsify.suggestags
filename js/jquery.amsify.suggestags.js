@@ -748,11 +748,12 @@ var AmsifySuggestags;
 	};
 
 	$.fn.amsifySuggestags = function(options, method) {
-		return this.each(function() {
+		return this.map(function() {
 			var amsifySuggestags = new AmsifySuggestags(this);
 			amsifySuggestags._settings(options);
 			amsifySuggestags._setMethod(method);
 			amsifySuggestags._init();
+			return amsifySuggestags;
 		});
 	};
 }));
